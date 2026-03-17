@@ -18,6 +18,7 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 # Load model
 model = genai.GenerativeModel("gemini-2.5-flash")
 
+#initalize fastapi
 app = FastAPI()
 
 app.add_middleware(
