@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>DocuMind – AI Document Assistant</title>
+<link rel="stylesheet" href="style.css">
+<!-- Markdown parser -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<!-- KaTeX -->
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+<script defer
+src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
+<script defer
+src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js">
+</script>
+</head>
+
+<body>
+<header class="header">
+    <div class="logo">🤖 DocuMind</div>
+    <div class="subtitle">AI Document Assistant</div>
+</header>
+<div class="container">
+    <div id="uploadModal" class="modal">
+
+        <div class="modal-content">
+
+            <h3>Upload File</h3>
+
+            <input id="fileName" type="text" placeholder="File Name">
+
+            <textarea id="fileDescription" placeholder="Description"></textarea>
+
+            <input id="fileInput" type="file">
+
+            <div class="modal-buttons">
+
+                <button onclick="uploadFile()">Upload</button>
+                <button onclick="closeUpload()">Cancel</button>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        
+        <h3 class="sidebar-title">Document Controls</h3>
+        <button onclick="openUpload()">📄 Upload File</button>
+        
+        <label>📚 Document</label>
+        
+        <select id="fileSelect">
+            <option value="" disabled selected>Select File</option>
+        </select>
+
+        <label>🌐 Language</label>
+
+        <select id="languageSelect">
+            <option value="" disabled selected>Select Language</option>
+        </select>
+
+    </div>
+
+    <!-- Chat Panel -->
+    <div class="chat-panel">
+        <div class="chat-title">
+            Ask questions about your document
+        </div>
+        <div id="chatMessages">
+
+            <div class="welcome">
+                👋 Welcome to <b>DocuMind</b><br><br>
+                Upload a document and ask questions about it.
+            </div>
+        
+        </div>
+
+        <div class="chat-input">
+
+            <input
+                type="text"
+                id="question"
+                placeholder="Ask a question..."
+            />
+            <button onclick="startListening()" id="micBtn" class="mic-btn">🎤</button>
+            <button onclick="sendQuestion()">➤ Send</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
